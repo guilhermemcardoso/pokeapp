@@ -3,7 +3,7 @@ import {Text, TouchableOpacity} from 'react-native';
 import {capitalizeName, formatNumber} from '../../utils';
 import styles from './styles';
 
-const PokemonItem = ({item, index, onPress}) => {
+const PokemonItem = ({item, index, offset, onPress}) => {
   const handleOnPress = () => {
     onPress(item);
   };
@@ -14,7 +14,7 @@ const PokemonItem = ({item, index, onPress}) => {
       key={item.name}
       style={styles.item}>
       <Text style={styles.text}>
-        #{formatNumber(index + 1)} - {capitalizeName(item.name)}
+        #{formatNumber(offset + index + 1)} - {capitalizeName(item.name)}
       </Text>
     </TouchableOpacity>
   );

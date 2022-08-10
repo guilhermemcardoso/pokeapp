@@ -55,3 +55,7 @@ Na tela de detalhes, foi criada uma função (praticamente igual à da tela inic
 Além de todos os componentes visuais, foi criada uma função para deixar a primeira letra do nome do Pokemon maiúscula, apenas por questões estéticas. E o botão de "voltar" foi transferido para o cabeçalho da tela, utilizando um ícone de seta, intuitivo e próximo ao visual já padrãos das plataformas mobile.
 
 11. Refatoração de código por questões de usabilidade e legibilidade do código. Itens de listas foram extraídos para componentes externos, funções de formatação extraídas para um arquivo "utils" na raíz do projeto, assim outros componentes e telas podem usar a mesma função quando necessário.
+
+12. Para uma melhor usabilidade, e para a aplicação ficar mais divertida, uma paginação básica é implementada na listagem de pokemons, aproveitando que a própria API já fornece uma paginação para todas as listagens que ela oferece. 
+
+Assim, no próprio retorno da requisição à API que contém a lista de pokemons, dois outros valores são fornecidos e nos interessam: previous e next. Estes dois campos retornam uma URL, quando existe a página anterior (campo previous) ou a próxima página (campo next), e quando a página não existe, o campo irá retornar nulo. Portanto, basta que estes campos seja armazenados no estado da tela inicial da aplicação e, caso o campo não seja nulo, seu botão correspondente será exibido no rodapé da tela. O componente do botão foi criado como um componente geral da aplicação a partir de uma TouchableOpacity e um Text.
