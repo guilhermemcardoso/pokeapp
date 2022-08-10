@@ -11,3 +11,5 @@ A chamada da API é feita dentro do useEffect(), que é um Hook que é chamado t
 4. Para listagem de items dentro de um componente, é interessante, sempre que possível, fazer uso dos componentes do React Native próprios para esta funcionalidade. Como é o caso do <Flatlist>, um componente para listagem de items, sem a necessidade de se fazer um map em um array de objetos. O Flatlist consegue, sozinho, gerenciar seu uso de memória e, assim, renderizar apenas os items que estão sendo exibidos na tela naquele momento.
 
 5. Os componentes da aplicação agora foram quebrados em componentes menores e reutilizáveis. Assim, será possível adicionar alguma biblioteca que possa lidar com a navegação entre telas e adicionar um evento de clique quando um item da lista for selecionado (clicado).
+
+6. A estrutura base para a tela de detalhes do Pokemon foi criada, para que a biblioteca de navegação seja adicionada (React Navigation) e as rotas já possam ser criadas (Tela Home e Tela de Detalhes).
