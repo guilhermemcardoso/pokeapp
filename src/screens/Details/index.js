@@ -1,8 +1,10 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {Image, SafeAreaView, StatusBar, Text} from 'react-native';
+import {Button, Image, SafeAreaView, StatusBar, Text} from 'react-native';
 import styles from './styles';
 
 const DetailsScreen = () => {
+  const navigation = useNavigation();
   const [pokemon, setPokemon] = useState();
 
   const fetchData = async () => {
@@ -20,6 +22,7 @@ const DetailsScreen = () => {
       <StatusBar />
       <Image style={styles.logo} />
       <Text>Details here</Text>
+      <Button onPress={() => navigation.goBack()} title="Voltar" />
     </SafeAreaView>
   );
 };

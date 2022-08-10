@@ -1,9 +1,11 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {FlatList, Image, SafeAreaView, StatusBar} from 'react-native';
 import ListItem from '../../components/ListItem';
 import styles from './styles';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   const [pokemons, setPokemons] = useState([]);
 
   const fetchData = async () => {
@@ -16,7 +18,13 @@ const HomeScreen = () => {
     fetchData();
   }, []);
 
-  const renderItem = ({item, index}) => <ListItem item={item} index={index} />;
+  const handleOnItemPress = item => {
+    navigation.navigate('Details');
+  };
+
+  const renderItem = ({item, index}) => (
+    <ListItem item={item} index={index} onPress={handleOnItemPress} />
+  );
 
   return (
     <SafeAreaView style={styles.container}>

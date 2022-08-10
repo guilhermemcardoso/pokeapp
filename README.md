@@ -41,3 +41,7 @@ and make sure to add an import statement at the top of this file:
 import android.os.Bundle;
 
 Após as dependências serem adicionadas ao projeto, é possível criar uma Pilha de Navegação.
+
+9. É preciso criar um evento de clique para que o usuário do app possa navegar entre telas. Uma das maneiras de se fazer isso é utilizando o hook useNavigation. Para que cada item da lista de pokemons possa ser clicável, é preciso que sua View mais externa seja substituída de View para uma TouchableOpacity. TouchableOpacity é um componente do próprio React Native que consegue exibir uma resposta visual ao ser clicado e também lidar com o evento de clique e clique longo. Assim, ao ser clicado, o item da lista irá disparar o método criado na própria tela inicial, o qual irá chamar o evento de navegação para que o usuário seja redirecionado para a tela de detalhes do pokemon. 
+
+Na tela de detalhes, foi adicionado um botão apenas para exemplo, que chama uma função de navegação chamada goBack, que volta para o estado anterior da pilha de navegação. Ou seja, redirecionada o usuário de volta para a tela anterior.
