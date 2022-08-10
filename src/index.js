@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {
+  FlatList,
   Image,
   SafeAreaView,
   ScrollView,
@@ -22,21 +23,19 @@ const App = () => {
     fetchData();
   }, []);
 
+  const renderItem = ({item, index}) => (
+    <View key={item.name} style={styles.item}>
+      <Text style={styles.text}>
+        {index + 1} {item.name}
+      </Text>
+    </View>
+  );
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
       <Image style={styles.logo} source={require('./assets/logo.png')} />
-      <ScrollView style={styles.list}>
-        {pokemons.map((pokemon, index) => {
-          return (
-            <View key={pokemon.name} style={styles.item}>
-              <Text style={styles.text}>
-                {index + 1} {pokemon.name}
-              </Text>
-            </View>
-          );
-        })}
-      </ScrollView>
+      <FlatList style={styles.list} data={pokemons} renderItem={renderItem} />
     </SafeAreaView>
   );
 };

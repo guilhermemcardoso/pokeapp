@@ -8,4 +8,4 @@ A chamada da API é feita dentro do useEffect(), que é um Hook que é chamado t
 
 3. Os componentes da aplicação estão sendo estilizados utilizando o StyleSheet, do próprio React Native. Uma imagem foi adicionada na tela inicial por questões estéticas, mas também para que o componente <Image> do React Native seja utilizado. Foi adicionado também uma propriedade key para o item que contém as informações de cada pokemon. A propriedade key é importante quando temos qualquer tipo de listagem dentro da aplicação, pois ajuda o react native a identificar e renderizar cada elemento. Por isso, cada elemento de uma lista deve possuir uma key única.
 
-4. 
+4. Para listagem de items dentro de um componente, é interessante, sempre que possível, fazer uso dos componentes do React Native próprios para esta funcionalidade. Como é o caso do <Flatlist>, um componente para listagem de items, sem a necessidade de se fazer um map em um array de objetos. O Flatlist consegue, sozinho, gerenciar seu uso de memória e, assim, renderizar apenas os items que estão sendo exibidos na tela naquele momento.
