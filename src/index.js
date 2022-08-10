@@ -29,7 +29,7 @@ const App = () => {
       <ScrollView style={styles.list}>
         {pokemons.map((pokemon, index) => {
           return (
-            <View style={styles.item}>
+            <View key={pokemon.name} style={styles.item}>
               <Text style={styles.text}>
                 {index + 1} {pokemon.name}
               </Text>
