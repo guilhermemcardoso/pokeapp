@@ -1,3 +1,19 @@
+# Como rodar o projeto localmente
+Para rodar o projeto localmente, é preciso ter o ambiente de desenvolvimento preparado, com nodejs, npm (ou yarn), java, xcode (caso queira rodar a aplicação na plataforma iOS), etc.
+
+Faça o clone do projeto e rode o seguinte comando no diretório raíz do projeto:
+`npm install //ou yarn`
+
+Caso esteja em um computador com macOS, rode os seguintes comandos para que a aplicação funcione em dispositivos (ou emuladores) iOS:
+`cd ios && pod install`
+
+Com isso, todas as dependências do projeto serão instaladas. Agora, para rodar a aplicação de fato, abra dois terminais e rode os seguintes comandos:
+
+Terminal 1: `npm run start //ou yarn start`
+Terminal 2: `npm run android //ou yarn android`
+
+Podemos substituir a palavra `android` no comando do Terminal 2 por `ios` caso esteja em um ambiente macOS e queira rodar a aplicação na plataforma iOS.
+
 # Introdução
 A aplicação contém duas telas: Home e Detalhes. 
 
