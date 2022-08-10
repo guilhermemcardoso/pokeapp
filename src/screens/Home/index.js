@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {FlatList, Image, SafeAreaView, StatusBar} from 'react-native';
-import ListItem from '../../components/ListItem';
+import {FlatList, Image, SafeAreaView, StatusBar, View} from 'react-native';
+import PokemonItem from '../../components/PokemonItem';
 import styles from './styles';
 
 const HomeScreen = () => {
@@ -23,14 +23,16 @@ const HomeScreen = () => {
   };
 
   const renderItem = ({item, index}) => (
-    <ListItem item={item} index={index} onPress={handleOnItemPress} />
+    <PokemonItem item={item} index={index} onPress={handleOnItemPress} />
   );
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
       <Image style={styles.logo} source={require('../../assets/logo.png')} />
-      <FlatList style={styles.list} data={pokemons} renderItem={renderItem} />
+      <View style={styles.containerList}>
+        <FlatList style={styles.list} data={pokemons} renderItem={renderItem} />
+      </View>
     </SafeAreaView>
   );
 };

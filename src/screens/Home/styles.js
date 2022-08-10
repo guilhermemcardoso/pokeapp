@@ -4,12 +4,19 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 20,
+    flex: 1,
+  },
+  containerList: {
+    borderColor: '#000',
+    borderWidth: 2,
+    borderRadius: 5,
+    margin: 10,
+    alignSelf: 'stretch',
     flex: 1,
   },
   list: {
-    flex: 1,
     alignSelf: 'stretch',
+    flex: 1,
   },
   logo: {
     margin: 30,

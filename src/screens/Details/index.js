@@ -9,6 +9,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import StatusItem from '../../components/StatusItem';
+import TypeBadge from '../../components/TypeBadge';
+import {capitalizeName} from '../../utils';
 import styles from './styles';
 
 const DetailsScreen = ({route}) => {
@@ -26,28 +29,9 @@ const DetailsScreen = ({route}) => {
     navigation.goBack();
   };
 
-  const capitalizeName = name => {
-    if (!name || name.length === 0) {
-      return '';
-    }
-    return `${name[0].toUpperCase()}${name.slice(1)}`;
-  };
+  const renderTypeItem = ({item}) => <TypeBadge item={item} />;
 
-  const renderTypeItem = ({item}) => (
-    <View style={styles.typeBadge}>
-      <Text style={styles.typeLabel}>{item?.type?.name}</Text>
-    </View>
-  );
-
-  const renderStatusItem = ({item}) => {
-    console.log('item', item);
-    return (
-      <View style={styles.statusLine}>
-        <Text style={styles.statusLabel}>{item?.stat.name}</Text>
-        <Text style={styles.statusValue}>{item?.base_stat}</Text>
-      </View>
-    );
-  };
+  const renderStatusItem = ({item}) => <StatusItem item={item} />;
 
   useEffect(() => {
     fetchData();

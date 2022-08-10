@@ -65,27 +65,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   statusContainer: {
-    marginVertical: 20,
-    marginHorizontal: 10,
+    margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,
     borderColor: '#000',
     borderWidth: 2,
-  },
-  statusLabel: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    flex: 1,
-    textAlign: 'right',
-    marginRight: 10,
-  },
-  statusLine: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 4,
-    flex: 1,
   },
   statusList: {
     alignSelf: 'stretch',
@@ -98,10 +83,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     padding: 8,
   },
-  statusValue: {
-    fontSize: 20,
-    flex: 1,
-  },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
@@ -110,23 +91,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  typeBadge: {
-    margin: 2,
-    height: 30,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    borderRadius: 15,
-    borderColor: '#000',
-    borderWidth: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   typeContainer: {
     alignItems: 'center',
-  },
-  typeLabel: {
-    fontSize: 12,
-    fontWeight: 'bold',
   },
   typeList: {
     flexGrow: 0,
