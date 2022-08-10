@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {
+  Image,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -22,13 +23,16 @@ const App = () => {
   }, []);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <StatusBar />
-      <ScrollView>
-        {pokemons.map(pokemon => {
+      <Image style={styles.logo} source={require('./assets/logo.png')} />
+      <ScrollView style={styles.list}>
+        {pokemons.map((pokemon, index) => {
           return (
-            <View>
-              <Text>{pokemon.name}</Text>
+            <View style={styles.item}>
+              <Text style={styles.text}>
+                {index + 1} {pokemon.name}
+              </Text>
             </View>
           );
         })}
@@ -37,6 +41,30 @@ const App = () => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
+    flex: 1,
+  },
+  item: {
+    padding: 10,
+    margin: 10,
+    borderRadius: 5,
+    borderColor: '#000',
+    borderWidth: 1,
+  },
+  list: {
+    flex: 1,
+    alignSelf: 'stretch',
+  },
+  logo: {
+    margin: 30,
+  },
+  text: {
+    fontSize: 18,
+  },
+});
 
 export default App;
