@@ -5,6 +5,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  View,
 } from 'react-native';
 
 const App = () => {
@@ -25,7 +26,11 @@ const App = () => {
       <StatusBar />
       <ScrollView>
         {pokemons.map(pokemon => {
-          return <Text>{pokemon.name}</Text>;
+          return (
+            <View>
+              <Text>{pokemon.name}</Text>
+            </View>
+          );
         })}
       </ScrollView>
     </SafeAreaView>
