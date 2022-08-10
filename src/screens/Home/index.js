@@ -19,7 +19,7 @@ const HomeScreen = () => {
   }, []);
 
   const handleOnItemPress = item => {
-    navigation.navigate('Details');
+    navigation.navigate('Details', {item});
   };
 
   const renderItem = ({item, index}) => (
